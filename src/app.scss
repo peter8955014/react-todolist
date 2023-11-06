@@ -1,0 +1,142 @@
+@mixin white-box {
+  background-color: var(--color-white);
+  border-radius: var(--color-border-radius);
+  margin-top: 1rem;
+  box-shadow: var(--box-shadow);
+  transition: all 0.3s ease;
+
+  &:hover {
+    box-shadow: none;
+  }
+}
+
+
+:root {
+  --color-primary: #6c9bcf;
+  --color-danger: #ff0060;
+  --color-succss: #1b9c85;
+  --color-warning: #f7d060;
+  --color-white: #fff;
+  --color-info-dark: #7d8da1;
+  --color-dark: #363949;
+  --color-light: rgba(132, 139, 200, 0.18);
+  --color-dark-variant: #677483;
+  --color-background: #f6f6f9;
+
+  --color-border-radius: 2rem;
+  --border-radius-1: 0.4rem;
+  --border-redius-2: 1.2rem;
+
+  --card-padding: 1.8rem;
+  --padding-1: 1.2rem;
+  --box-shadow: 0 0.5rem 1rem var(--color-light);
+}
+
+/* 共同樣式 */
+* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  appearance: 0;
+  border: 0;
+  text-decoration: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Poppins";
+  font-weight: bold;
+
+}
+
+.box {
+  background-color: #1b9c8530;
+  padding: 2rem;
+  border-radius: var(--color-border-radius);
+  box-shadow: var(--box-shadow);
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+  margin-top: 1rem;
+
+  &:hover {
+    box-shadow: none;
+  }
+
+  .title {
+    font-weight: bold;
+    background: -webkit-linear-gradient(135deg, #1f4037 20%, #99f2c8, #008787 90% );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: #978170;
+    text-align: center;
+  }
+
+  .container {
+
+    width: 50vw;
+
+    .select-box {
+      display: flex;
+      justify-content: space-between;
+
+      button {
+        @include white-box;
+        cursor: pointer;
+        padding: 0.5rem;
+        width: 5rem;
+        font-weight: bold
+
+      }
+
+      .select {
+        @include white-box;
+        cursor: pointer;
+        width: 7.5rem;
+        text-align: center;
+        font-weight: bold
+      }
+    }
+
+    .content-box {
+      @include white-box;
+      padding: var(--card-padding);
+      display: flex;
+      justify-content: space-between;
+
+      .check {
+        display: flex;
+
+        .checkbox-wrapper-12 {
+          margin: auto;
+        }
+
+        .content {
+          margin-left: 1rem;
+
+          .timer {
+            display: block;
+          }
+        }
+      }
+
+      .tool {
+        font-size: 1.5rem;
+        margin-top: 0.5rem;
+        cursor: pointer;
+        
+        .FaTrash{
+          margin-right: 0.5rem;
+          &:hover{
+            color: #1b9c85;
+          }
+        }
+        .BiEdit:hover{
+          color: #1b9c85;
+        }
+      }
+    }
+  }
+}
